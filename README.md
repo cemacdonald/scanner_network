@@ -18,7 +18,7 @@ This Python script scans a local network for active devices, displays their IP a
 Before running the script, ensure the following are installed on your computer:
 
 1. **Python 3.6 or higher**  
-   - Verify your Python version with:
+   Verify your Python version with:
      ```bash
      python --version
      ```
