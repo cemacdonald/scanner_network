@@ -37,11 +37,6 @@ The following dependencies are needed to execute this scanner on your computer:
 
 ## Executing the Script
  
-1.
-```bash
-sudo python netscan.py
-```
-2. 
 ```bash
 python netscan.py
 ```
