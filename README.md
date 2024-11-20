@@ -15,7 +15,7 @@ This Python script scans a local network for active devices, displays their IP a
 
 ## Prerequisites
 
-Before running the script, ensure the following are installed on your computer:
+The following dependencies are needed to execute this scanner on your computer:
 
 1. **Python 3.6 or higher**  
    Verify your Python version with:
@@ -35,7 +35,7 @@ Before running the script, ensure the following are installed on your computer:
 ---
 # Usage
 
-## Running the Script
+## Executing the Script
  
 1.
 ```bash
