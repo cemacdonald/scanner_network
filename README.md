@@ -35,7 +35,7 @@ Before running the script, ensure the following are installed on your computer:
 ---
 # Usage
 
-##Running the Script
+## Running the Script
  
 1.
 ```bash
