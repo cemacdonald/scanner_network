@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from scapy.all import ARP, Ether, srp
 import sys
 
@@ -5,7 +6,7 @@ def scan_network(ip_range):
     # Create an ARP request with the given IP range
     arp = ARP(pdst=ip_range)
     ether = Ether(dst="ff:ff:ff:ff:ff:ff")
-    packet = ether/arp
+    packet = ether / arp
 
     # Send the packet and capture responses
     result = srp(packet, timeout=2, verbose=0)[0]
@@ -18,18 +19,23 @@ def scan_network(ip_range):
     return devices
 
 if __name__ == "__main__":
-    # Get IP range from the user
-    if len(sys.argv) < 2:
-        print("Usage: python network_scanner.py <IP_RANGE>")
-        print("Example: python network_scanner.py 192.168.1.0/24")
+    try:
+        # Get IP range from the user
+        ip_range = input("Please enter the IP address range you would like to scan for (e.g., 192.168.1.1/24): ")
+    except KeyboardInterrupt:
+        print("\nOperation cancelled by user.")
         sys.exit(1)
 
-    ip_range = sys.argv[1]
+    if not ip_range:
+        print("No IP address range provided. Exiting.")
+        sys.exit(1)
+
+    # Scan the network
     devices = scan_network(ip_range)
 
     # Display results
-    print("Available devices in the network:")
-    print("IP" + " "*18 + "MAC")
-    print("-"*40)
+    print("\nAvailable devices in the network:")
+    print("IP" + " " * 18 + "MAC")
+    print("-" * 40)
     for device in devices:
         print("{:16}    {}".format(device['ip'], device['mac']))
