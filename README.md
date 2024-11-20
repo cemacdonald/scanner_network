@@ -31,6 +31,8 @@ Before running the script, ensure the following are installed on your computer:
    Install the required libraries using `pip`:
    ```bash
    pip install scapy pandas matplotlib
+   ```
+---
 # Usage
 
 ##Running the Script
